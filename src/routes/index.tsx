@@ -66,9 +66,7 @@ function Index() {
               <Link to="/auth">登入</Link>
             </Button>
             <Button asChild>
-              <Link to="/auth" search={{ mode: "signup" }}>
-                免費註冊
-              </Link>
+              <Link to="/auth">免費註冊</Link>
             </Button>
           </div>
         )}
@@ -87,9 +85,7 @@ function Index() {
         </p>
         <div className="mt-10 flex flex-wrap justify-center gap-3">
           <Button asChild size="lg" className="glow-ring">
-            <Link to={user ? "/dashboard" : "/auth"} search={user ? undefined : { mode: "signup" }}>
-              開始追蹤航線
-            </Link>
+            <Link to={user ? "/dashboard" : "/auth"}>開始追蹤航線</Link>
           </Button>
           <Button asChild size="lg" variant="secondary">
             <Link to="/auth">我已經有帳號</Link>

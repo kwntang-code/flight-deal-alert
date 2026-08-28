@@ -41,7 +41,10 @@ function AuthPage() {
     setBusy(true);
     const { error } = await supabase.auth.signInWithPassword({ email, password });
     setBusy(false);
-    if (error) return toast.error(error.message);
+    if (error) {
+      toast.error(error.message);
+      return;
+    }
     toast.success("歡迎回來！");
     navigate({ to: "/dashboard", replace: true });
   }
@@ -58,7 +61,10 @@ function AuthPage() {
       },
     });
     setBusy(false);
-    if (error) return toast.error(error.message);
+    if (error) {
+      toast.error(error.message);
+      return;
+    }
     toast.success("註冊成功，開始追蹤航線吧！");
     navigate({ to: "/dashboard", replace: true });
   }
@@ -67,7 +73,10 @@ function AuthPage() {
     const result = await lovable.auth.signInWithOAuth("google", {
       redirect_uri: window.location.origin,
     });
-    if (result.error) return toast.error("Google 登入失敗，請再試一次");
+    if (result.error) {
+      toast.error("Google 登入失敗，請再試一次");
+      return;
+    }
     if (result.redirected) return;
     navigate({ to: "/dashboard", replace: true });
   }
