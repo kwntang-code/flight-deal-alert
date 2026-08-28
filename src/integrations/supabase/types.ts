@@ -14,7 +14,104 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      price_alerts: {
+        Row: {
+          created_at: string
+          id: string
+          is_read: boolean
+          new_price: number
+          old_price: number
+          route_id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          is_read?: boolean
+          new_price: number
+          old_price: number
+          route_id: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          is_read?: boolean
+          new_price?: number
+          old_price?: number
+          route_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "price_alerts_route_id_fkey"
+            columns: ["route_id"]
+            isOneToOne: false
+            referencedRelation: "tracked_routes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          id: string
+          nickname: string
+        }
+        Insert: {
+          created_at?: string
+          id: string
+          nickname?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          nickname?: string
+        }
+        Relationships: []
+      }
+      tracked_routes: {
+        Row: {
+          created_at: string
+          currency: string
+          current_price: number | null
+          depart_date: string
+          destination: string
+          id: string
+          is_active: boolean
+          origin: string
+          return_date: string | null
+          target_price: number
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          currency?: string
+          current_price?: number | null
+          depart_date: string
+          destination: string
+          id?: string
+          is_active?: boolean
+          origin: string
+          return_date?: string | null
+          target_price: number
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          currency?: string
+          current_price?: number | null
+          depart_date?: string
+          destination?: string
+          id?: string
+          is_active?: boolean
+          origin?: string
+          return_date?: string | null
+          target_price?: number
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
