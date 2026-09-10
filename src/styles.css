@@ -51,60 +51,99 @@
 :root {
   --radius: 0.875rem;
 
-  /* Deep night-flight navy with a warm sunrise accent */
-  --background: oklch(0.19 0.045 250);
-  --foreground: oklch(0.97 0.008 240);
-  --card: oklch(0.24 0.045 252);
-  --card-foreground: oklch(0.97 0.008 240);
-  --popover: oklch(0.24 0.045 252);
-  --popover-foreground: oklch(0.97 0.008 240);
-  --primary: oklch(0.78 0.16 62);
-  --primary-foreground: oklch(0.22 0.05 255);
-  --secondary: oklch(0.3 0.05 253);
-  --secondary-foreground: oklch(0.95 0.01 240);
-  --muted: oklch(0.28 0.04 253);
-  --muted-foreground: oklch(0.72 0.03 250);
-  --accent: oklch(0.72 0.13 215);
-  --accent-foreground: oklch(0.2 0.05 255);
-  --destructive: oklch(0.62 0.21 22);
-  --destructive-foreground: oklch(0.98 0.005 240);
-  --success: oklch(0.74 0.16 155);
-  --success-foreground: oklch(0.2 0.05 255);
-  --border: oklch(0.34 0.04 253);
-  --input: oklch(0.32 0.04 253);
-  --ring: oklch(0.78 0.16 62);
-  --chart-1: oklch(0.78 0.16 62);
-  --chart-2: oklch(0.72 0.13 215);
-  --chart-3: oklch(0.74 0.16 155);
-  --chart-4: oklch(0.68 0.15 20);
-  --chart-5: oklch(0.8 0.1 100);
-  --sidebar: oklch(0.22 0.045 252);
-  --sidebar-foreground: oklch(0.95 0.01 240);
-  --sidebar-primary: oklch(0.78 0.16 62);
-  --sidebar-primary-foreground: oklch(0.22 0.05 255);
-  --sidebar-accent: oklch(0.3 0.05 253);
-  --sidebar-accent-foreground: oklch(0.95 0.01 240);
-  --sidebar-border: oklch(0.34 0.04 253);
-  --sidebar-ring: oklch(0.78 0.16 62);
+  /* Ink-wash sunrise: misted paper, sumi ink, a low red sun over still water */
+  --background: oklch(0.961 0.013 233);
+  --foreground: oklch(0.24 0.018 250);
+  --card: oklch(0.993 0.004 238);
+  --card-foreground: oklch(0.24 0.018 250);
+  --popover: oklch(0.995 0.003 240);
+  --popover-foreground: oklch(0.24 0.018 250);
+  --primary: oklch(0.56 0.205 27);
+  --primary-foreground: oklch(0.99 0.005 60);
+  --secondary: oklch(0.925 0.014 240);
+  --secondary-foreground: oklch(0.32 0.02 250);
+  --muted: oklch(0.945 0.01 238);
+  --muted-foreground: oklch(0.53 0.028 245);
+  --accent: oklch(0.86 0.135 88);
+  --accent-foreground: oklch(0.28 0.03 60);
+  --destructive: oklch(0.5 0.215 22);
+  --destructive-foreground: oklch(0.99 0.005 60);
+  --success: oklch(0.56 0.095 168);
+  --success-foreground: oklch(0.99 0.004 200);
+  --border: oklch(0.885 0.012 240);
+  --input: oklch(0.9 0.013 240);
+  --ring: oklch(0.56 0.205 27);
+  --chart-1: oklch(0.56 0.205 27);
+  --chart-2: oklch(0.82 0.13 88);
+  --chart-3: oklch(0.58 0.055 250);
+  --chart-4: oklch(0.35 0.025 250);
+  --chart-5: oklch(0.72 0.04 235);
+  --sidebar: oklch(0.985 0.004 238);
+  --sidebar-foreground: oklch(0.26 0.018 250);
+  --sidebar-primary: oklch(0.56 0.205 27);
+  --sidebar-primary-foreground: oklch(0.99 0.005 60);
+  --sidebar-accent: oklch(0.93 0.012 240);
+  --sidebar-accent-foreground: oklch(0.3 0.02 250);
+  --sidebar-border: oklch(0.89 0.012 240);
+  --sidebar-ring: oklch(0.56 0.205 27);
 
-  --gradient-sky: linear-gradient(
-    140deg,
-    oklch(0.19 0.045 250) 0%,
-    oklch(0.26 0.07 258) 45%,
-    oklch(0.33 0.09 40) 100%
-  );
+  /* Layered like the painting: the sun disc, its red halo bleeding into mist,
+     then the wash from golden sky down to pale water. The halo sits off to the
+     upper right so centred hero text stays on quiet paper. */
+  --gradient-sky:
+    radial-gradient(circle at 82% 20%, oklch(0.9 0.16 92 / 0.92) 0%, oklch(0.88 0.15 90 / 0.6) 2.4%, transparent 5%),
+    radial-gradient(
+      circle at 82% 20%,
+      oklch(0.68 0.21 29 / 0.42) 0%,
+      oklch(0.75 0.18 32 / 0.16) 12%,
+      transparent 27%
+    ),
+    radial-gradient(ellipse 72% 46% at 10% 92%, oklch(0.89 0.032 242 / 0.6) 0%, transparent 68%),
+    radial-gradient(ellipse 55% 34% at 96% 78%, oklch(0.9 0.028 246 / 0.45) 0%, transparent 70%),
+    linear-gradient(
+      178deg,
+      oklch(0.955 0.075 96) 0%,
+      oklch(0.964 0.024 76) 6%,
+      oklch(0.955 0.017 230) 19%,
+      oklch(0.963 0.013 236) 55%,
+      oklch(0.944 0.019 243) 100%
+    );
   --gradient-card: linear-gradient(
     160deg,
-    oklch(0.26 0.05 252) 0%,
-    oklch(0.22 0.045 250) 100%
+    oklch(0.995 0.003 240) 0%,
+    oklch(0.972 0.008 236) 100%
   );
-  --shadow-lift: 0 18px 45px -20px oklch(0.1 0.05 255 / 0.85);
-  --shadow-glow: 0 0 0 1px oklch(0.78 0.16 62 / 0.35), 0 12px 40px -14px oklch(0.78 0.16 62 / 0.55);
+  --shadow-lift: 0 18px 45px -22px oklch(0.42 0.035 250 / 0.3);
+  --shadow-glow: 0 0 0 1px oklch(0.6 0.19 30 / 0.28), 0 12px 40px -16px oklch(0.66 0.18 34 / 0.45);
 }
 
 .dark {
-  --background: oklch(0.19 0.045 250);
-  --foreground: oklch(0.97 0.008 240);
+  --background: oklch(0.961 0.013 233);
+  --foreground: oklch(0.24 0.018 250);
+}
+
+/* On narrow screens the headline wraps under the sun, so lift the disc into the
+   corner where it stays decorative instead of sitting behind the glyphs. */
+@media (max-width: 767px) {
+  :root {
+    --gradient-sky:
+      radial-gradient(circle at 88% 9%, oklch(0.9 0.16 92 / 0.9) 0%, oklch(0.88 0.15 90 / 0.55) 2%, transparent 4.2%),
+      radial-gradient(
+        circle at 88% 9%,
+        oklch(0.68 0.21 29 / 0.34) 0%,
+        oklch(0.75 0.18 32 / 0.13) 11%,
+        transparent 24%
+      ),
+      radial-gradient(ellipse 80% 40% at 6% 94%, oklch(0.89 0.032 242 / 0.55) 0%, transparent 70%),
+      linear-gradient(
+        178deg,
+        oklch(0.955 0.075 96) 0%,
+        oklch(0.964 0.024 76) 5%,
+        oklch(0.955 0.017 230) 17%,
+        oklch(0.963 0.013 236) 55%,
+        oklch(0.944 0.019 243) 100%
+      );
+  }
 }
 
 @layer base {
