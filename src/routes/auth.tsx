@@ -3,7 +3,6 @@ import { createFileRoute, useNavigate, Link } from "@tanstack/react-router";
 import { Plane } from "lucide-react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
-import { lovable } from "@/integrations/lovable";
 import { useSession } from "@/hooks/use-session";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -66,18 +65,6 @@ function AuthPage() {
       return;
     }
     toast.success("註冊成功，開始追蹤航線吧！");
-    navigate({ to: "/dashboard", replace: true });
-  }
-
-  async function handleGoogle() {
-    const result = await lovable.auth.signInWithOAuth("google", {
-      redirect_uri: window.location.origin,
-    });
-    if (result.error) {
-      toast.error("Google 登入失敗，請再試一次");
-      return;
-    }
-    if (result.redirected) return;
     navigate({ to: "/dashboard", replace: true });
   }
 
@@ -165,14 +152,6 @@ function AuthPage() {
               </form>
             </TabsContent>
           </Tabs>
-
-          <div className="my-6 flex items-center gap-3 text-xs text-muted-foreground">
-            <span className="h-px flex-1 bg-border" />或<span className="h-px flex-1 bg-border" />
-          </div>
-
-          <Button variant="secondary" className="w-full" onClick={handleGoogle}>
-            使用 Google 繼續
-          </Button>
         </div>
       </div>
     </main>
